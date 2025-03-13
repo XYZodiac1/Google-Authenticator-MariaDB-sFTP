@@ -37,6 +37,8 @@ systemctl restart mariadb
 ```
 
 ### Using Google Authenticator on a New User
+
+You can run the `./google-authenticator` without the parameters and manually select what settings you prefer
 ```bash
 adduser new_user
 su new_user
@@ -44,6 +46,8 @@ su new_user
 ```
 
 ### Set the correct permissions
+
+MySQL must be able to read the google-authenticator file
 ```bash
 sudo chown new_user:new_user /home/new_user/.google_authenticator
 sudo chmod 600 /home/new_user/.google_authenticator
