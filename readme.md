@@ -8,6 +8,7 @@ This guide will show you how to configure Google Authenticator with PAM (Pluggab
 
 ### Install Dependencies
 
+Installing the updated version of Google-Authenticator. If you installed from the repository keep in mind that isn't the latest version of Google Authenticator.
 ```bash
 apt update
 apt install libqrencode-dev libtool libpam-dev autoconf make -y
