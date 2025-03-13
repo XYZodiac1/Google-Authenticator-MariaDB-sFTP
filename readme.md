@@ -54,11 +54,13 @@ sudo chown new_user:new_user /home/new_user/.google_authenticator
 sudo chmod 600 /home/new_user/.google_authenticator
 ```
 
+### Receiving the Authentication Token
 
+You can get the Token from a tool such as "browserscan.net/2fa" and use the secret token or use the APP Google Authenticator on your mobile phone and scan the generated QR code.
 
+### Testing
 
-
-
-
-
-
+Once you've done all the steps above you can test by trying to authenticate using the credentials for new user.
+```bash
+mysql -u new_user -p
+```
