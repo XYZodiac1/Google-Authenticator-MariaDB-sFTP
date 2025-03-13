@@ -60,7 +60,7 @@ You can get the Token from a tool such as "browserscan.net/2fa" and use the secr
 
 ### Testing
 
-Once you've done all the steps above you can test by trying to authenticate using the credentials for new user.
+Once you've done all the steps above you can test by trying to authenticate using the credentials for new user and you will get prompt for the verification token.
 ```bash
 mysql -u new_user -p
 ```
