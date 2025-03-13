@@ -22,6 +22,7 @@ make install
 
 ### Installing and configuring MariaDB
 
+We are using the username `new_user` just for testing purposes
 ```bash
 apt install mariadb-server
 mysql -u root -p
