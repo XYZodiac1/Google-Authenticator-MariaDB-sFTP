@@ -26,14 +26,33 @@ make install
 apt install mariadb-server
 mysql -u root -p
 > INSTALL SONAME 'auth_pam';
-> create user teste identified via pam;
+> create user new_user identified via pam;
 
-nano /etc/pam.d/mysql
-auth            required        pam_unix.so
-auth            required        pam_google_authenticator.so
-account         required        pam_unix.so
+echo -e "auth required pam_unix.so\nauth required pam_google_authenticator.so\naccount required pam_unix.so" | sudo tee -a /etc/pam.d/mysql
 
+sudo sed -i 's/ProtectHome=true/ProtectHome=false/' /lib/systemd/system/mariadb.service
+systecmctl daemon-reload
+systemctl restart mariadb
 ```
+
+### Using Google Authenticator on a New User
+```bash
+adduser new_user
+su new_user
+./google-authenticator -t -C -f -d -r 5 -R 15 -w 5
+```
+
+### Set the correct permissions
+```bash
+sudo chown new_user:new_user /home/new_user/.google_authenticator
+sudo chmod 600 /home/new_user/.google_authenticator
+```
+
+
+
+
+
+
 
 
 
